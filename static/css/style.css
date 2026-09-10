@@ -1,23 +1,22 @@
 :root {
-  --ink: #f8fafc;
-  --ink-soft: #cbd5e1;
-  --muted: #94a3b8;
+  --ink: #111827;
+  --ink-soft: #344054;
+  --muted: #667085;
 
-  --accent: #8b5cf6;
-  --accent-dark: #6d28d9;
-  --accent2: #22d3ee;
+  --accent: #2563eb;
+  --accent-dark: #1d4ed8;
+  --accent2: #06b6d4;
 
-  --bg: #070b14;
-  --surface: #0f172a;
-  --surface-solid: #111827;
+  --bg: #f8fafc;
+  --surface: rgba(255, 255, 255, 0.78);
+  --surface-solid: #ffffff;
 
-  --border: #1e293b;
-  --border-strong: #334155;
+  --border: rgba(15, 23, 42, 0.08);
+  --border-strong: rgba(15, 23, 42, 0.13);
 
-  --success: #22c55e;
-  --danger: #f43f5e;
+  --success: #10b981;
+  --danger: #ef4444;
 }
-
 
 /* =========================
    BASE
@@ -48,19 +47,19 @@ body {
 
   background:
     radial-gradient(
-      circle at 10% 0%,
-      rgba(139, 92, 246, 0.16),
-      transparent 32%
+      circle at 5% 0%,
+      rgba(37, 99, 235, 0.10),
+      transparent 30%
     ),
     radial-gradient(
-      circle at 90% 90%,
-      rgba(34, 211, 238, 0.12),
+      circle at 95% 90%,
+      rgba(6, 182, 212, 0.09),
       transparent 30%
     ),
     linear-gradient(
       180deg,
-      #070b14 0%,
-      #0a0f1c 100%
+      #f8fafc 0%,
+      #f4f7fb 100%
     );
 
   overflow-x: hidden;
@@ -77,13 +76,12 @@ body::before {
   background:
     linear-gradient(
       135deg,
-      rgba(139, 92, 246, 0.035),
-      transparent 45%
+      rgba(255, 255, 255, 0.8),
+      transparent 40%
     );
 
   z-index: 0;
 }
-
 
 /* =========================
    MAIN CONTAINER
@@ -100,7 +98,6 @@ body::before {
 
   z-index: 2;
 }
-
 
 /* =========================
    HERO
@@ -120,7 +117,7 @@ body::before {
 
   letter-spacing: 0.18em;
 
-  color: var(--accent2);
+  color: var(--accent);
 
   font-weight: 800;
 }
@@ -135,15 +132,10 @@ h1 {
   line-height: 0.95;
 
   font-weight: 800;
-
-  color: #f8fafc;
 }
 
 h1 span {
   color: var(--accent);
-
-  text-shadow:
-    0 0 25px rgba(139, 92, 246, 0.35);
 }
 
 .hero p {
@@ -153,7 +145,6 @@ h1 span {
 
   font-size: 15px;
 }
-
 
 /* =========================
    HERO ICON
@@ -175,15 +166,15 @@ h1 span {
   background:
     linear-gradient(
       135deg,
-      #7c3aed,
+      #2563eb,
       #06b6d4
     );
 
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.7);
 
   box-shadow:
-    0 20px 50px rgba(124, 58, 237, 0.28),
-    0 0 30px rgba(6, 182, 212, 0.12);
+    0 20px 45px rgba(37, 99, 235, 0.20),
+    inset 0 1px 0 rgba(255, 255, 255, 0.4);
 
   transform: rotate(6deg);
 
@@ -193,16 +184,15 @@ h1 span {
 }
 
 .hero-cube:hover {
-  transform: rotate(0deg) translateY(-5px);
+  transform: rotate(0deg) translateY(-3px);
 
   box-shadow:
-    0 25px 60px rgba(124, 58, 237, 0.35),
-    0 0 40px rgba(6, 182, 212, 0.18);
+    0 25px 55px rgba(37, 99, 235, 0.25),
+    inset 0 1px 0 rgba(255, 255, 255, 0.5);
 }
 
-
 /* =========================
-   CARDS
+   GLASS / CARDS
 ========================= */
 
 .glass {
@@ -210,15 +200,17 @@ h1 span {
 
   border: 1px solid var(--border);
 
+  backdrop-filter: blur(22px);
+  -webkit-backdrop-filter: blur(22px);
+
   box-shadow:
-    0 15px 40px rgba(0, 0, 0, 0.25);
+    0 12px 40px rgba(15, 23, 42, 0.055),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
 
   transition:
     border-color 0.2s ease,
-    box-shadow 0.2s ease,
-    transform 0.2s ease;
+    box-shadow 0.2s ease;
 }
-
 
 /* =========================
    STATS
@@ -234,29 +226,12 @@ h1 span {
   margin-bottom: 16px;
 
   overflow: hidden;
-
-  background: #0f172a;
-
-  border: 1px solid #1e293b;
-
-  box-shadow:
-    0 15px 40px rgba(0, 0, 0, 0.25);
 }
 
 .stats div {
   padding: 20px 24px;
 
   border-right: 1px solid var(--border);
-
-  transition:
-    background 0.2s ease,
-    transform 0.2s ease;
-}
-
-.stats div:hover {
-  background: #131e32;
-
-  transform: translateY(-2px);
 }
 
 .stats div:last-child {
@@ -272,7 +247,7 @@ h1 span {
 
   font-weight: 750;
 
-  color: #f8fafc;
+  color: var(--ink);
 }
 
 .stats span {
@@ -282,7 +257,6 @@ h1 span {
 
   font-weight: 500;
 }
-
 
 /* =========================
    TASK COMPOSER
@@ -294,13 +268,6 @@ h1 span {
   border-radius: 22px;
 
   margin-bottom: 18px;
-
-  background: #0f172a;
-
-  border: 1px solid #1e293b;
-
-  box-shadow:
-    0 15px 40px rgba(0, 0, 0, 0.25);
 }
 
 .composer form {
@@ -310,7 +277,6 @@ h1 span {
 
   gap: 9px;
 }
-
 
 /* =========================
    INPUTS
@@ -327,9 +293,9 @@ input {
 
   padding: 14px 16px;
 
-  color: #f8fafc;
+  color: var(--ink);
 
-  background: #080d18;
+  background: rgba(255, 255, 255, 0.85);
 
   font: inherit;
 
@@ -340,23 +306,21 @@ input {
 }
 
 input::placeholder {
-  color: #64748b;
+  color: #98a2b3;
 }
 
 input:hover {
-  border-color: rgba(139, 92, 246, 0.45);
+  border-color: rgba(37, 99, 235, 0.20);
 }
 
 input:focus {
-  background: #0b1220;
+  background: #ffffff;
 
-  border-color: #8b5cf6;
+  border-color: rgba(37, 99, 235, 0.45);
 
   box-shadow:
-    0 0 0 4px rgba(139, 92, 246, 0.10),
-    0 0 20px rgba(139, 92, 246, 0.08);
+    0 0 0 4px rgba(37, 99, 235, 0.08);
 }
-
 
 /* =========================
    BUTTON
@@ -378,12 +342,12 @@ button {
   background:
     linear-gradient(
       135deg,
-      #8b5cf6,
-      #6d28d9
+      var(--accent),
+      var(--accent-dark)
     );
 
   box-shadow:
-    0 8px 25px rgba(139, 92, 246, 0.30);
+    0 8px 22px rgba(37, 99, 235, 0.20);
 
   transition:
     transform 0.2s ease,
@@ -394,16 +358,15 @@ button {
 button:hover {
   transform: translateY(-2px);
 
-  filter: brightness(1.08);
+  filter: brightness(1.03);
 
   box-shadow:
-    0 12px 32px rgba(139, 92, 246, 0.40);
+    0 12px 28px rgba(37, 99, 235, 0.25);
 }
 
 button:active {
   transform: translateY(0);
 }
-
 
 /* =========================
    TASK LIST
@@ -426,13 +389,6 @@ button:active {
 
   border-radius: 20px;
 
-  background: #0f172a;
-
-  border: 1px solid #1e293b;
-
-  box-shadow:
-    0 10px 30px rgba(0, 0, 0, 0.20);
-
   transition:
     transform 0.2s ease,
     border-color 0.2s ease,
@@ -441,17 +397,15 @@ button:active {
 }
 
 .task:hover {
-  transform: translateY(-3px);
+  transform: translateY(-2px);
 
-  border-color: rgba(139, 92, 246, 0.45);
+  border-color: rgba(37, 99, 235, 0.16);
 
-  background: #121c30;
+  background: rgba(255, 255, 255, 0.88);
 
   box-shadow:
-    0 15px 35px rgba(0, 0, 0, 0.30),
-    0 0 25px rgba(139, 92, 246, 0.05);
+    0 12px 32px rgba(15, 23, 42, 0.07);
 }
-
 
 /* =========================
    CHECKBOX
@@ -467,7 +421,7 @@ button:active {
 
   place-items: center;
 
-  border: 1px solid #334155;
+  border: 1px solid rgba(15, 23, 42, 0.14);
 
   border-radius: 10px;
 
@@ -475,42 +429,34 @@ button:active {
 
   text-decoration: none;
 
-  background: #080d18;
+  background: #ffffff;
 
   transition:
     border-color 0.2s ease,
     background 0.2s ease,
-    transform 0.2s ease,
-    box-shadow 0.2s ease;
+    transform 0.2s ease;
 }
 
 .check:hover {
-  border-color: #8b5cf6;
+  border-color: rgba(37, 99, 235, 0.35);
 
-  background: rgba(139, 92, 246, 0.10);
+  background: rgba(37, 99, 235, 0.05);
 
-  transform: scale(1.05);
-
-  box-shadow:
-    0 0 15px rgba(139, 92, 246, 0.15);
+  transform: scale(1.04);
 }
 
 .done .check {
   background:
     linear-gradient(
       135deg,
-      #8b5cf6,
+      #2563eb,
       #06b6d4
     );
 
   border: 0;
 
   color: white;
-
-  box-shadow:
-    0 0 18px rgba(139, 92, 246, 0.25);
 }
-
 
 /* =========================
    TASK CONTENT
@@ -530,14 +476,12 @@ button:active {
   font-weight: 700;
 
   letter-spacing: -0.01em;
-
-  color: #f8fafc;
 }
 
 .task p {
   margin: 0 0 7px;
 
-  color: #94a3b8;
+  color: var(--muted);
 
   font-size: 13px;
 
@@ -545,7 +489,7 @@ button:active {
 }
 
 .task small {
-  color: #64748b;
+  color: #98a2b3;
 
   font-size: 10px;
 
@@ -555,16 +499,15 @@ button:active {
 .done h2 {
   text-decoration: line-through;
 
-  color: #64748b;
+  color: #98a2b3;
 }
-
 
 /* =========================
    DELETE
 ========================= */
 
 .delete {
-  color: #64748b;
+  color: #98a2b3;
 
   text-decoration: none;
 
@@ -583,11 +526,10 @@ button:active {
 .delete:hover {
   color: var(--danger);
 
-  background: rgba(244, 63, 94, 0.10);
+  background: rgba(239, 68, 68, 0.07);
 
-  transform: scale(1.08);
+  transform: scale(1.05);
 }
-
 
 /* =========================
    EMPTY STATE
@@ -599,30 +541,18 @@ button:active {
   border-radius: 24px;
 
   padding: 55px 20px;
-
-  background: #0f172a;
-
-  border: 1px solid #1e293b;
-
-  box-shadow:
-    0 15px 40px rgba(0, 0, 0, 0.25);
 }
 
 .empty-art {
   font-size: 50px;
 
   color: var(--accent);
-
-  text-shadow:
-    0 0 25px rgba(139, 92, 246, 0.35);
 }
 
 .empty h2 {
   margin: 12px 0 6px;
 
   letter-spacing: -0.02em;
-
-  color: #f8fafc;
 }
 
 .empty p {
@@ -633,7 +563,6 @@ button:active {
   font-size: 14px;
 }
 
-
 /* =========================
    BACKGROUND ORBS
 ========================= */
@@ -643,13 +572,11 @@ button:active {
 
   border-radius: 50%;
 
-  filter: blur(20px);
+  filter: blur(8px);
 
   pointer-events: none;
 
   z-index: 0;
-
-  animation: floatOrb 8s ease-in-out infinite alternate;
 }
 
 .orb-one {
@@ -662,7 +589,7 @@ button:active {
   background:
     radial-gradient(
       circle,
-      rgba(139, 92, 246, 0.16),
+      rgba(37, 99, 235, 0.10),
       transparent 70%
     );
 }
@@ -677,56 +604,10 @@ button:active {
   background:
     radial-gradient(
       circle,
-      rgba(34, 211, 238, 0.13),
+      rgba(6, 182, 212, 0.09),
       transparent 70%
     );
-
-  animation-delay: 2s;
 }
-
-
-/* =========================
-   ANIMATIONS
-========================= */
-
-@keyframes floatOrb {
-  from {
-    transform: translateY(0) scale(1);
-  }
-
-  to {
-    transform: translateY(-25px) scale(1.08);
-  }
-}
-
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(15px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.hero {
-  animation: fadeUp 0.6s ease both;
-}
-
-.stats {
-  animation: fadeUp 0.7s ease 0.1s both;
-}
-
-.composer {
-  animation: fadeUp 0.7s ease 0.2s both;
-}
-
-.task {
-  animation: fadeUp 0.5s ease both;
-}
-
 
 /* =========================
    MOBILE
